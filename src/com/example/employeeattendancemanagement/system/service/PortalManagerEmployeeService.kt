@@ -131,7 +131,8 @@ class PortalManagerEmployeeService(
     }
 
     override fun viewSubOrdinates(employee: Employee) {
-        employee.subordinatesIds.forEach { it -> println("ID: $it Name: ${employeeDB.employees.get(it)?.name}") }
+        if(employee.subordinatesIds.isEmpty()) println("No subordinates")
+        else employee.subordinatesIds.forEach { it -> println("ID: $it Name: ${employeeDB.employees.get(it)?.name}") }
     }
 
     override fun getLeaveRequests(employee: Employee): List<LeaveRequest> {
@@ -144,7 +145,5 @@ class PortalManagerEmployeeService(
         superior?.subordinatesLeaveRequests?.filter { it -> it.emp_id==employee.id }?.takeLast(5)?.forEach { it -> stringBuilder.append("$it\n") }
         return stringBuilder.toString()
     }
-
-
 
 }

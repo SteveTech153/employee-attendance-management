@@ -1,5 +1,6 @@
 package com.example.employeeattendancemanagement.system.assistance
 
 import com.example.employeeattendancemanagement.system.action.EmployeeActions
+import com.example.employeeattendancemanagement.system.action.PasswordActions
 
-abstract class EmployeeAssistance: EmployeeActions
+abstract class EmployeeAssistance: EmployeeActions, PasswordActions

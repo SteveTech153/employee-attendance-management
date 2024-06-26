@@ -10,7 +10,6 @@ object AdminUI {
         println("\n----------Admin Login----------")
         var admin: Admin? = null
 
-        // Loop until valid admin is authenticated
         while (admin == null) {
             print("Enter Admin password : ")
             val password: String = readln()
@@ -46,7 +45,7 @@ object AdminUI {
     }
 
     private fun viewEmployees(admin: Admin) {
-        admin.viewEmployees()
+        admin.viewEmployees(admin)
     }
 
     private fun addEmployee(admin: Admin) {
@@ -60,7 +59,7 @@ object AdminUI {
 
         println("Enter superior ID: ")
         val superiorId: Int = readln().toInt()
-        if(admin.addEmployee(name, superiorId, PortalManager)){
+        if(admin.addEmployee(admin, name, superiorId, PortalManager)){
             println("Employee added successfully!\n")
         }else
             println("something went wrong! Superior Id might not exist\n")
@@ -71,7 +70,7 @@ object AdminUI {
         val employeeId = readln().toInt()
         println("Enter Subordinate Id: ")
         val subordinateId = readln().toInt()
-        if (admin.addASubOrdinateForAnEmployee(employeeId, subordinateId)) {
+        if (admin.addASubOrdinateForAnEmployee(admin, employeeId, subordinateId)) {
             println("Subordinate added successfully!\n")
         } else {
             println("Couldn't add subordinate\n")
@@ -83,7 +82,7 @@ object AdminUI {
         val employeeId = readln().toInt()
         println("Enter superior Id: ")
         val superiorId = readln().toInt()
-        admin.setSuperiorForAnEmployee(employeeId, superiorId)
+        admin.setSuperiorForAnEmployee(admin, employeeId, superiorId)
         println("Superior set successfully!\n")
     }
 }

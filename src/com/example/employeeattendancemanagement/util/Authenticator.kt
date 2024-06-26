@@ -17,12 +17,12 @@ object Authenticator: AuthenticatorActions by PortalManager {
         }
         return null
     }
-    fun authenticateAndGetEmployee(id: Int): Employee?{
-         val employee = getEmployee(id)
-        return if(employee==null){
+    fun authenticateAndGetEmployee(id: Int): Employee? {
+        val employee = getEmployee(id)
+        return if (employee == null) {
             println("Id is wrong !")
             null
-        }else{
+        } else {
             employee
         }
     }

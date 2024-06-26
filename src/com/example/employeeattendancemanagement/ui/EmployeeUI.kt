@@ -2,6 +2,7 @@ package com.example.employeeattendancemanagement.ui
 
 import com.example.employeeattendancemanagement.system.entity.core.Employee
 import com.example.employeeattendancemanagement.util.Authenticator
+import com.example.employeeattendancemanagement.util.Validator
 import java.time.LocalDate
 
 object EmployeeUI {
@@ -211,4 +212,5 @@ object EmployeeUI {
         employee.viewLeaveRequestsOfSubordinates(employee)
         println()
     }
+
 }
